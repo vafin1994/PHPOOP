@@ -11,10 +11,8 @@
 <h1>Header</h1>
 <?php
 if (isset($text)) :?>
-    <?php foreach ($text as $item): ?>
-        <h2><a href="index.php?id=<?=$item['id'];?>"><?=$item['title'] ?></a></h2>
-        <p><?= $item['description'] ?></p>
-    <?php endforeach; ?>
+        <h2><?=$text['title'] ?></h2>
+        <p><?= $text['text'] ?></p>
 <?php endif; ?>
 <h6>Footer</h6>
 </body>

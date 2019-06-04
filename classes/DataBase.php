@@ -25,7 +25,7 @@ class DataBase
             return false;
         } else {
             for ($i = 0; $i < mysqli_num_rows($res); $i++) {
-              $row[] = mysqli_fetch_array($res, MYSQLI_ASSOC);
+                $row[] = mysqli_fetch_array($res, MYSQLI_ASSOC);
             }
         }
         return $row;
@@ -33,7 +33,14 @@ class DataBase
 
     public function getArticle($id)
     {
-
+        $query = "SELECT * FROM `articles` WHERE id='$id'";
+        $res = mysqli_query($this->db, $query);
+        if (!res) {
+            return false;
+        } else {
+            $row = mysqli_fetch_array($res, MYSQLI_ASSOC);
+            return $row;
+        }
     }
 
 }

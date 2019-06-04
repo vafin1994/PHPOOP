@@ -13,7 +13,9 @@ class Page
 
     public function getArticle($id)
     {
-
+        $db = new DataBase(HOST, USER, PASSWORD, DATABASE);
+        $result = $db->getArticle($id);
+        return $result;
     }
 
     public function getBody($text, $file)
