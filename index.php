@@ -8,5 +8,5 @@ if(isset($_GET['id'])){
 
 }else {
     $text = $page->getAllArticles();
-    $page->getBody($text, 'main');
+    echo $page->getBody($text, 'main');
 }
